@@ -375,3 +375,28 @@ body {
     0%{right: 0%;opacity: 50%;}
     100%{right: 5%;opacity: 100%;}
 }
+.judul-isi-berita h1{
+padding: 2rem 9rem .3rem 6rem;
+margin-top: 8rem;
+font-size: 2vw;
+text-align: justify;
+font-family: 'Montserrat-Bold';
+color: #ea5f00;
+margin-bottom: .5rem;
+
+line-height: 1.2;
+}
+.judul-isi-berita hr
+{
+color: #11aa89;
+margin-left: 6rem;
+width: 8%;
+border: 0.2rem solid;
+float: left;
+}
+.img-isi-berita-lanjut{
+font-size: 75%;
+}
+.img-isi-berita-lanjut h1 b{
+font-size: 75%;
+}
