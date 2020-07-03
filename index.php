@@ -1,7 +1,3 @@
-<?php
-require 'functions.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -905,6 +901,47 @@ require 'functions.php';
 
     <br>
     <br>
+
+<?php
+
+// koneksi ke database
+$conn = mysqli_connect("localhost", "root", "", "pbwuas");
+$mahasiswa = query("SELECT * FROM agenda ORDER BY id DESC LIMIT 3");
+
+function query($query) {
+    global $conn;
+    $result = mysqli_query($conn, $query);
+    $rows = [];
+    while( $row = mysqli_fetch_assoc($result) ) {
+        $rows[] = $row;
+    }
+    return $rows;
+}
+?>
+
+    <div class="container-fluid info">
+        <h2>AGENDA KOTA</h2>
+        <hr>
+        <br>
+        <br>
+        <div class="row">
+            <div class="col">
+                <table cellspacing="10">
+
+                    <?php foreach( $mahasiswa as $row ) : ?>
+
+                    <tr>
+                        <td style="font-size: 32px; padding-right: 32px;"><?php echo $row["tanggal"]; ?></td>
+                        <td style="font-size: 32px;"><?php echo $row["judul"]; ?></td>
+                    </tr>
+
+                    <?php endforeach; ?>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <br><br>
 
     <!-- Rizal 3 -->
     <div class="container-fluid info">
